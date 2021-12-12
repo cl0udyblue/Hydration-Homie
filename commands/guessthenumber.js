@@ -23,6 +23,7 @@ module.exports = {
         let tries = 0;
 
         collector.on('collect', async(msg) => {
+            if (msg.author.bot) return
             if(finished == false) {
                 let split = msg.content.split(/ +/);
                 let attempt = split.shift();
