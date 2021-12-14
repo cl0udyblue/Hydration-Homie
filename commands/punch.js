@@ -1,13 +1,13 @@
 const { MessageCollector, MessageEmbed } = require('discord.js');
 module.exports = {
-    name: 'hug',
+    name: 'punch',
     run: (client, message, args) => {
         const image_api = require('anime-images-api')
 
     const api = new image_api('GET')
     let person = message.mentions.members.first()
 
-    api.sfw.hug().then(response => {
+    api.sfw.punch().then(response => {
         if (!message.mentions.users.size) {
             const errorembed = (
                 new MessageEmbed()
@@ -18,7 +18,7 @@ module.exports = {
         }
         const embedone = (
             new MessageEmbed()
-            .setDescription(`${message.author} **hugged** ${person}!`)
+            .setDescription(`${message.author} **punched** ${person}!`)
             .setColor('RANDOM')
             .setImage(`${response.image}`)
         )

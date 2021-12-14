@@ -1,9 +1,9 @@
-const { User, ReactionCollector } = require("discord.js");
+// @ts-check // Can be removed, used to check typings and valid actions
+const { MessageEmbed } = require('discord.js');
 
 module.exports = {
-    name: "ping",
-    run: (client, message, args) => {
-
-       message.channel.send("pong!").catch(console.error);
-    }
-   };
+  name: 'ping',
+  description: 'Get bot ping.',
+   run: (client, message, args) => {
+    message.channel.send('Pong!')
+   }};
