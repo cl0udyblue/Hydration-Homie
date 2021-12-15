@@ -1,6 +1,6 @@
 {
-  "name": "aquabot",
-  "version": "1.0.0",
+  "name": "hydration-homie",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -18,10 +18,7 @@
     "node": "^17.2.0",
     "node-gyp": "^8.4.1",
     "npm": "^8.3.0",
-    "quick.js": "^1.0.0",
-    "quickdb": "^1.0.5",
-    "weather-js": "^2.0.0",
     "youtube-search": "^1.1.6",
-    "yt-search": "^0.1.1"
+    "yt-search": "^0.1.4"
   }
 }
