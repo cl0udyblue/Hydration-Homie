@@ -1,7 +1,7 @@
 const { MessageCollector, MessageEmbed } = require('discord.js');
 module.exports = {
     name: 'guessthenumber',
-    
+    aliases: ['gtn', 'guessnumber'],
     run : async(client, message, args) => {
         let number = Math.ceil(Math.random() * 10000);
         let finished = false;

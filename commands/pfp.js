@@ -1,18 +1,13 @@
+const { MessageCollector, MessageEmbed } = require('discord.js');
 module.exports = {
-    name: 'avatar',
-    aliases: ['icon', 'pfp', 'profilepic'],
-    description: 'Return a user(s) avatar picture!',
-    //Use your own execute parameters
-    run: (client, message, cmd, args) => {
-
-        if (!message.mentions.users.size) {
-            return message.channel.send(`**Your Avatar: ** ${message.author.displayAvatarURL({ dynamic: true })}`);
-        }
-
-        const avatar_list = message.mentions.users.map(user => {
-            return `**${user.username}'s Avatar: ** ${user.displayAvatarURL({ dynamic: true })}`;
-        });
-
-        message.channel.send(avatar_list);
+    name: 'pfp',
+    aliases: ['profilepic', 'avatar', 'image'],
+    run: (client, message, args) => {
+        const user = message.mentions.users.first() || message.author;
+        const embed = new MessageEmbed()
+                            .setTitle(`${user.username}'s avatar`)
+                            .setColor('RANDOM')
+                            .setImage(user.displayAvatarURL({ dynamic: true }));
+        message.channel.send({ embeds: [embed] })
     }
 }

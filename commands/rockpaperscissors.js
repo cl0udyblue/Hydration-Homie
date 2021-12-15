@@ -1,6 +1,7 @@
 const Discord = require('discord.js')
 module.exports = {
     name: 'rps',
+    aliases: ['rockpaperscissors', 'roshambo'],
     description: 'Rock Paper Scissors.',
     async run(client, message, args) {
         let hand = [{ txt: 'Rock', emoji: '✊', index: 0 }, { txt: 'Paper', emoji: '🤚', index: 1 }, { txt: 'Scissors', emoji: '✌️', index: 2 }]; // Defining Moves

@@ -1,5 +1,6 @@
 module.exports = {
     name : 'emojify',
+    aliases: ['emoji', 'ef'],
     description : 'Make any sentence out of emoji\'s',
 
     run: async(client, message, args) => {

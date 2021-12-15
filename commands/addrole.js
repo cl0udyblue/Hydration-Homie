@@ -1,5 +1,6 @@
 module.exports = {
     name: "addrole",
+    aliases: ['role', 'ar'],
     run : (client, message, a) => {
        
       const adminPerm = client.config.adminPerm
