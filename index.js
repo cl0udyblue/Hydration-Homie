@@ -25,5 +25,4 @@ for (const file of commands) {
   client.commands.set(command.name, command);
 }
 
-
 client.login(config.token);
