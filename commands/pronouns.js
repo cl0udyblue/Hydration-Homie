@@ -1,13 +1,14 @@
-const got = require('got')
+const { request } = require('undici')
+const { MessageEmbed } = require('discord.js');
 module.exports = {
     name: 'pronouns',
+    aliases: [],
     run: (client, message, args) => {
         ;(async () => {
-            const user = message.mentions.users.first() || message.author 
+            const user = message.mentions.users.first() || message.author
 
-            const pronounMap = {
-                
-                unspecified: 'Unspecified',
+            const pronounMap = {                
+                unspecified: 'Unspecified, has not signed up for pronoundb.',
                 hh: 'he/him',
                 hi: 'he/it',
                 hs: 'he/she',
@@ -30,12 +31,20 @@ module.exports = {
                 avoid: 'Avoid pronouns, use my name',
             }
 
-            const pronounsData = await got.get(
+            const pronounsData = await request(
                 `https://pronoundb.org/api/v1/lookup?platform=discord&id=${user.id}`
-            ) 
-            const pronouns = await JSON.parse(pronounsData.body) 
-
-            console.log(`${user.tag}'s pronouns are ${pronounMap[pronouns.pronouns]}`)
+            )
+            const pronouns = await pronounsData.body.json()
+            await message.channel.send({
+                embeds: [
+                    new MessageEmbed()
+                        .setTitle(`${message.mentions.users.first()}'s pronouns` || `Your pronouns`)
+                        .setDescription(`${pronounMap[pronouns.pronouns]}`)
+                        .setColor(random)
+                        .setFooter('All data from pronoundb.org')
+                ]
+            })
+// await message.reply(`${user.tag}'s pronouns are ${pronounMap[pronouns.pronouns]}`)
         })()
     },
 }
