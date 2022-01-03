@@ -6,9 +6,7 @@ module.exports = {
         if (!adminPerm)
         return message.reply("You can't use this command.")
 if (!/^\d+$/.test(message.content.split(" ")[1])) return message.reply('Please provide a valid number');
-// Check if the provided argument is completely a number. We run this because parseInt can parse numbers like this 564gb, leading to some undesirable results
 
-// Parse Amount
 const amount = !!parseInt(message.content.split(" ")[1]) ? parseInt(message.content.split(" ")[1]) : parseInt(message.content.split(" ")[2])
 
 if (amount > 100) {
@@ -25,5 +23,7 @@ message.channel.messages.fetch({ limit: amount }).then((messages) => {
  const filterBy = user ? user.id : Client.user.id.catch(error => console.log(error.stack));
  messages = messages.filter(m => m.author.id === filterBy).map(e => e).catch(error => console.log(error.stack));
  }
- message.channel.bulkDelete(messages).catch(error => console.log(error.stack));
+
+ message.channel.bulkDelete(amount).catch(err => {
+    message.channel.send(':x: `Sorry, I cannot delete messages older than 14 days`') })
 })}};

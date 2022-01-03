@@ -7,7 +7,7 @@ module.exports = {
         const embed = new MessageEmbed()
                             .setTitle(`${user.username}'s avatar`)
                             .setColor('RANDOM')
-                            .setImage(user.displayAvatarURL({ dynamic: true }));
+                            .setImage(user.displayAvatarURL({ dynamic: true}));
         message.channel.send({ embeds: [embed] })
     }
 }

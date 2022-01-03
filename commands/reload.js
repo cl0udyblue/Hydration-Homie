@@ -1,10 +1,6 @@
 module.exports = {
   name: "reload",
   run: (client, message, args) => {
-    const owner = client.config.isBotOwner
-    if (!owner){
-      return;
-    }
     if (!args || args.length < 1) return message.reply("Must provide a command name to reload.");
     const commandName = args[0];
     // Check if the command exists and is valid

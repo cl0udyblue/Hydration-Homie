@@ -40,11 +40,10 @@ module.exports = {
                     new MessageEmbed()
                         .setTitle(`${message.mentions.users.first()}'s pronouns` || `Your pronouns`)
                         .setDescription(`${pronounMap[pronouns.pronouns]}`)
-                        .setColor(random)
+                        .setColor('RANDOM')
                         .setFooter('All data from pronoundb.org')
                 ]
             })
-// await message.reply(`${user.tag}'s pronouns are ${pronounMap[pronouns.pronouns]}`)
         })()
     },
 }
