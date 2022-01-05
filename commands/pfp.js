@@ -5,9 +5,16 @@ module.exports = {
     run: (client, message, args) => {
         const user = message.mentions.users.first() || message.author;
         const embed = new MessageEmbed()
-                            .setTitle(`${user.username}'s avatar`)
-                            .setColor('RANDOM')
-                            .setImage(user.displayAvatarURL({ dynamic: true}));
+        .setTitle(`${user.tag}'s avatar:`)
+        .setColor('RANDOM')
+//        .setAuthor({ name: user.tag, iconURL: user.displayAvatarURL() })
+        .setImage(user.displayAvatarURL({ size: 4096, dynamic: true }))
+        .setTimestamp()
+        .addFields([
+        { name: 'PNG', value: `[Link](${user.displayAvatarURL({ size: 4096, dynamic: true, format: 'png' })})`, inline: true },
+        { name: 'JPG', value: `[Link](${user.displayAvatarURL({ size: 4096, dynamic: true, format: 'jpg' })})`, inline: true },
+        { name: 'WEBP', value: `[Link](${user.displayAvatarURL({ size: 4096, dynamic: true, format: 'webp' })})`, inline: true }
+      ])
         message.channel.send({ embeds: [embed] })
     }
 }

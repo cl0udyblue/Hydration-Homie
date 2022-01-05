@@ -23,5 +23,6 @@
     "undici": "^4.12.1",
     "youtube-search": "^1.1.6",
     "yt-search": "^0.1.4"
-  }
+  },
+  "nodeVersion": "17.1.0"
 }
