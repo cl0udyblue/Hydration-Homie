@@ -14,7 +14,7 @@ module.exports = {
             .setTimestamp()
         )
 
-        message.channel.send({ embeds: [embedone] })
+        message.reply({ embeds: [embedone],  allowedMentions: { repliedUser: false } })
         
         let collector = new MessageCollector(message.channel, msg => msg.author.id == message.author.id, {
             time: 60000,
@@ -44,7 +44,7 @@ module.exports = {
                     .setTimestamp()
                     .setColor('GREEN')
                 )
-                message.channel.send({ embeds: [newembed] })
+                message.reply({ embeds: [newembed],  allowedMentions: { repliedUser: false } })
             }
         });
         

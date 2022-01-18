@@ -14,15 +14,16 @@ module.exports = {
                 .setTitle(`No User Specified!`)
                 .setColor('RANDOM')
             )
-        return message.channel.send({ embeds: [errorembed] })
+        return message.channel.send({ embeds: [errorembed], allowedMentions: { repliedUser: false } })
         }
+        message.delete()
         const embedone = (
             new MessageEmbed()
             .setDescription(`${message.author} **hugged** ${person}!`)
             .setColor('RANDOM')
             .setImage(`${response.image}`)
         )
-        message.channel.send({ embeds: [embedone] })
+        message.channel.send({ embeds: [embedone], allowedMentions: { repliedUser: false }  })
 }) 
 
 }

@@ -35,14 +35,14 @@ module.exports = {
                 `https://pronoundb.org/api/v1/lookup?platform=discord&id=${user.id}`
             )
             const pronouns = await pronounsData.body.json()
-            await message.channel.send({
+            await message.reply({
                 embeds: [
                     new MessageEmbed()
                         .setTitle(`${message.mentions.users.first()}'s pronouns` || `Your pronouns`)
                         .setDescription(`${pronounMap[pronouns.pronouns]}`)
                         .setColor('RANDOM')
                         .setFooter('All data from pronoundb.org')
-                ]
+                ],  allowedMentions: { repliedUser: false } 
             })
         })()
     },

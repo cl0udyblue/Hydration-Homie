@@ -7,7 +7,7 @@ module.exports = {
         let sentence = '';
 const words = args[0];
 if(!words) {
-message.reply('You must specify what to emojify!');
+message.reply({content:'You must specify what to emojify!',  allowedMentions: { repliedUser: false }});
 return;}
         let chars = {
             char1: ':one:',
@@ -34,6 +34,6 @@ return;}
             else sentence += e
         }
         
-        message.channel.send(`${sentence}`)                                                                        
+        message.reply({content:`${sentence}`,  allowedMentions: { repliedUser: false }})                                                                        
     }
 }

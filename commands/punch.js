@@ -14,7 +14,7 @@ module.exports = {
                 .setTitle(`No User Specified!`)
                 .setColor('RANDOM')
             )
-        return message.channel.send({ embeds: [errorembed] })
+        return message.reply({ embeds: [errorembed],  allowedMentions: { repliedUser: false }  })
         }
         const embedone = (
             new MessageEmbed()
@@ -22,7 +22,7 @@ module.exports = {
             .setColor('RANDOM')
             .setImage(`${response.image}`)
         )
-        message.channel.send({ embeds: [embedone] })
+        message.reply({ embeds: [embedone],  allowedMentions: { repliedUser: false }  })
 }) 
 
 }
