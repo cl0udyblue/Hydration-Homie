@@ -16,7 +16,6 @@ module.exports = {
             )
         return message.channel.send({ embeds: [errorembed], allowedMentions: { repliedUser: false } })
         }
-        message.delete()
         const embedone = (
             new MessageEmbed()
             .setDescription(`${message.author} **hugged** ${person}!`)
