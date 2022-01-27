@@ -38,7 +38,7 @@ module.exports = {
             await message.reply({
                 embeds: [
                     new MessageEmbed()
-                        .setTitle(`${message.mentions.users.first()}'s pronouns` || `Your pronouns`)
+                        .setTitle(`${user.tag}'s pronouns`)
                         .setDescription(`${pronounMap[pronouns.pronouns]}`)
                         .setColor('RANDOM')
                         .setFooter('All data from pronoundb.org')
