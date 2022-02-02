@@ -39,7 +39,7 @@ module.exports = {
                 await wc.delete()
             }
         } catch (err) {
-            message.channel.send('An unknown error occured! Please note that videos cannot be handled by the bot!')
+            message.channel.send('An unknown error occured! Please note that the max filesize is about 8mb!')
         }
     },
 }

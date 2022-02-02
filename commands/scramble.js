@@ -3,7 +3,7 @@ module.exports = {
     description: 'Attempt to unscramble the given scrambled word',
 
     run : async(client, message, args) => {
-        let words = ['hydrate', 'discord', 'water', 'homie', 'gaming', 'river', 'icey', 'aquatic', 'dehydrated'];
+        let words = ['hydrate', 'discord', 'water', 'homie', 'gaming', 'river', 'icey', 'aquatic', 'dehydrated', 'gay', 'headphones'];
         let word = words[parseInt(Math.random() * words.length)];
 
         let scrambled = word.split('');
