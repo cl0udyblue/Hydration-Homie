@@ -1,5 +1,6 @@
 module.exports = { 
   name: "unban",
+  description: "unbans a user",
   run: (client, message, args) => {
 
   const adminPerm = client.config.adminPerm
