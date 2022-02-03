@@ -14,6 +14,6 @@ if (!message.guild.me.permissions.has("BAN_MEMBERS"))
   return message.reply("I don't have the `BAN_MEMBERS` permission");
 
   message.guild.bans.remove(args[0])
-message.reply(`Unbanned ${args[0]} from ${message.guild.name}`)
+message.reply(`Unbanned <@${args[0]}> from ${message.guild.name}`)
 .catch(console.error);
   }}
