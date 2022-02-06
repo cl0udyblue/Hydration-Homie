@@ -10,11 +10,11 @@ module.exports = {
 //        .setAuthor({ name: user.tag, iconURL: user.displayAvatarURL() })
         .setImage(user.displayAvatarURL({ size: 4096, dynamic: true }))
         .setTimestamp()
-        .addFields([
-        { name: 'PNG', value: `[Link](${user.displayAvatarURL({ size: 4096, dynamic: true, format: 'png' })})`, inline: true },
-        { name: 'JPG', value: `[Link](${user.displayAvatarURL({ size: 4096, dynamic: true, format: 'jpg' })})`, inline: true },
-        { name: 'WEBP', value: `[Link](${user.displayAvatarURL({ size: 4096, dynamic: true, format: 'webp' })})`, inline: true }
-      ])
+          .addFields([
+          { name: 'PNG', value: `[Link](${user.displayAvatarURL({ size: 4096, dynamic: true, format: 'png' })})`, inline: true },
+          { name: 'JPG', value: `[Link](${user.displayAvatarURL({ size: 4096, dynamic: true, format: 'jpg' })})`, inline: true },
+          { name: 'WEBP', value: `[Link](${user.displayAvatarURL({ size: 4096, dynamic: true, format: 'webp' })})`, inline: true }
+        ])
         message.reply({ embeds: [embed], allowedMentions: { repliedUser: false } })
     }
 }
