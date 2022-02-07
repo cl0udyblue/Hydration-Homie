@@ -5,7 +5,7 @@ name: "mute",
 aliases: ['timeout'],
 async run (client, message, args) {
   if(!message.guild.me.permissions.has(['SEND_MESSAGES'])) return;
-  if(!message.guild.me.permissions.has(['MODERATE_MEMBERS', 'MANAGE_MEMBERS'])) return message.reply({ content:(`I don't have the \`MANAGE_MEMBERS\` and \`MANAGE_NICKNAMES permissions...`)})
+  if(!message.guild.me.permissions.has(['MODERATE_MEMBERS', 'MANAGE_MEMBERS'])) return message.reply({ content:(`I don't have the \`MANAGE_MEMBERS\` and \`MODERATE_MEMBERS permissions...`)})
 
   const embed =  new MessageEmbed()
   .setTitle(`Improper arguments provided! Please structure your command like this:`)

@@ -4,7 +4,7 @@ module.exports = {
   run: (client, message, args) => {
     if(!message.guild.me.permissions.has(['SEND_MESSAGES'])) return;
 
-    if(!message.guild.me.permissions.has(['BAN_MEMBERS0', 'MANAGE_MEMBERS'])) return message.reply('I don\'t have the `BAN_MEMBERS` permission!');
+    if(!message.guild.me.permissions.has(['BAN_MEMBERS', 'MANAGE_MEMBERS'])) return message.reply('I don\'t have the `BAN_MEMBERS` and `MANAGE_MEMBERS` permissions!');
   const adminPerm = client.config.adminPerm
   if (!adminPerm){
   return}
