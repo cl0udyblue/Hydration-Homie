@@ -2,6 +2,7 @@ const { MessageCollector, MessageEmbed } = require('discord.js');
 module.exports = {
     name: 'punch',
     run: (client, message, args) => {
+        if(!message.guild.me.permissions.has(['SEND_MESSAGES'])) return;
         const image_api = require('anime-images-api')
 
     const api = new image_api('GET')

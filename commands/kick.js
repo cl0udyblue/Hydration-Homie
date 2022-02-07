@@ -1,6 +1,7 @@
 module.exports = { 
   name: "kick",
   run: (client, message, [mention, ...reason]) => {
+    if(!message.guild.me.permissions.has(['SEND_MESSAGES'])) return;
     const adminPerm = client.config.adminPerm
     if (!adminPerm)
   return message.reply({ content:"You can't use this command.",  allowedMentions: { repliedUser: false } })

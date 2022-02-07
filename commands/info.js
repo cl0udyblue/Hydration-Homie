@@ -4,6 +4,7 @@ module.exports = {
     name: 'info',
     aliases: ['user', 'member', 'roles', 'id', 'userid'],
     async run(client, message, args) {
+        if(!message.guild.me.permissions.has(['SEND_MESSAGES'])) return;
     const user = message.mentions.users.first() ?? await client.users.fetch(args[0]).catch(() => null) //user, this just removes !info without args
   
 
@@ -90,11 +91,7 @@ module.exports = {
         joinstamp = `<t:${joinstamp}:R>`
 
            let perms = member.permissions.toArray()
-           perms = perms.toString()
-           let string = perms.toLowerCase()
-           const newString = string.split(', ')
-           newString[0] = newString[0].toLocaleUpperCase()
-           string = newString.join('')
+          
         const color = member.displayColor
         let roles = []
         member.roles.cache.forEach(i => roles.push(`<@&${i.id}>`))
@@ -135,7 +132,7 @@ module.exports = {
                     ${roles.join(" ")}
     
                     **Permissions**:
-                    ${string}
+                    \`${perms.join(", ")}\`
                     `)], allowedMentions: { repliedUser: false } })
         }
     }

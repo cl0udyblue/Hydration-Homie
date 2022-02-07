@@ -3,6 +3,7 @@ module.exports = {
     name: 'help',
     description: 'Help command',
      run: (client, message, args) => {
+      if(!message.guild.me.permissions.has(['SEND_MESSAGES'])) return;
 
         const embed = new MessageEmbed()
         .setTitle(`:mailbox_with_mail: You have mail! Check your DMs!`)

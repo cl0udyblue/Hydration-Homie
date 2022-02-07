@@ -3,6 +3,8 @@ module.exports = {
     name: 'pfp',
     aliases: ['profilepic', 'avatar', 'av'],
     async run (client, message, args) {
+      if(!message.guild.me.permissions.has(['SEND_MESSAGES'])) return;
+
       let user = message.mentions.users.first() || await client.users.fetch(args[0]).catch(() => null) || message.author 
       const embed = new MessageEmbed()
         .setTitle(`${user.tag}'s avatar:`)

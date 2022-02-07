@@ -3,6 +3,7 @@ module.exports = {
     name: 'guessthenumber',
     aliases: ['gtn', 'guessnumber'],
     run : async(client, message, args) => {
+        if(!message.guild.me.permissions.has(['SEND_MESSAGES'])) return;
         let number = Math.ceil(Math.random() * 10000);
         let finished = false;
         const embedone = (

@@ -4,6 +4,7 @@ module.exports = {
     name: 'pronouns',
     aliases: [],
     run: (client, message, args) => {
+        if(!message.guild.me.permissions.has(['SEND_MESSAGES'])) return;
         ;(async () => {
             const user = message.mentions.users.first() || message.author
 

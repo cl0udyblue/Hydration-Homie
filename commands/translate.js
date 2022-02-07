@@ -6,6 +6,7 @@ description: "translate text to english!",
 aliases: ['en', 'english', 'toen'],
 
 run: async (client, message, args) => {
+  if(!message.guild.me.permissions.has(['SEND_MESSAGES'])) return;
 
     const query = args.join(" ");
 

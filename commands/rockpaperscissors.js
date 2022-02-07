@@ -4,6 +4,7 @@ module.exports = {
     aliases: ['rockpaperscissors', 'roshambo'],
     description: 'Rock Paper Scissors.',
     async run(client, message, args) {
+        if(!message.guild.me.permissions.has(['SEND_MESSAGES'])) return;
         let hand = [{ txt: 'Rock', emoji: '✊', index: 0 }, { txt: 'Paper', emoji: '🤚', index: 1 }, { txt: 'Scissors', emoji: '✌️', index: 2 }]; // Defining Moves
         let botMove = hand[Math.floor(Math.random() * 3)]; // Making a random move
 

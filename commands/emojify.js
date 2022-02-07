@@ -4,6 +4,7 @@ module.exports = {
     description : 'Make any sentence out of emoji\'s',
 
     run: async(client, message, args) => {
+        if(!message.guild.me.permissions.has(['SEND_MESSAGES'])) return;
         let sentence = '';
 const words = args[0];
 if(!words) {

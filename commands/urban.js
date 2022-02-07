@@ -5,6 +5,7 @@ module.exports = {
     aliases: ['ub'],
     description: 'Searches on the Urban dictionary',
     async run(client, message, args) {
+        if(!message.guild.me.permissions.has(['SEND_MESSAGES'])) return;
         if (!args.length) return message.channel.send('You forgot to define your search term'); // Handles empty search queries
 
         try {

@@ -2,7 +2,11 @@ module.exports = {
   name: "addrole",
   aliases: ['role', 'ar'],
   run : (client, message, a) => {
-     
+    if(!message.guild.me.permissions.has(['SEND_MESSAGES'])) return;
+
+    if(!message.guild.me.permissions.has(['MANAGE_MEMBERS', 'MANAGE_ROLES'])) return message.reply({ content:(`I don't have the \`MANAGE_MEMBERS\` and \`MANAGE_ROLES
+    \` permissions!`), allowedMentions: { repliedUser: false } });
+
     const adminPerm = client.config.adminPerm
     if (!adminPerm)
       return message.reply({content:"You can't use this command.",  allowedMentions: { repliedUser: false }})

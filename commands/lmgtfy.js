@@ -4,6 +4,7 @@ module.exports = {
     aliases: ["lmgt", "LMGTFY", "letmegooglethatforyou", "letmegooglethat", "google"],
     description: 'Let me Google that for you...',
     async run(client, message, args){
+        if(!message.guild.me.permissions.has(['SEND_MESSAGES'])) return;
         if(!args[0]) return message.reply({content:'Please provide something for me to LMGTFY!', allowedMentions: { repliedUser: false }}); 
         else{
         message.reply({ embeds:[

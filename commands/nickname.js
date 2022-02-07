@@ -4,6 +4,9 @@ module.exports = {
   permissions: ["MANAGE_NICKNAMES"],
   aliases:['nick'],
   async run(client, message, args){
+    if(!message.guild.me.permissions.has(['SEND_MESSAGES'])) return;
+    if(!message.guild.me.permissions.has(['MANAGE_MEMBERS', 'MANAGE_NICKNAMES'])) return message.reply({ content:(`I don't have the \`MANAGE_MEMBERS\` and \`MANAGE_NICKNAMES permissions...`)})
+
     if (!message.member.permissions.has('MANAGE_GUILD')) return message.reply("You do not have required permissions to run this command!");
  
     let mentionMember = message.mentions.members.first();

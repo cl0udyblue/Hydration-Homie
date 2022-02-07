@@ -1,6 +1,7 @@
 module.exports = {
   name: "reload",
   run: (client, message, args) => {
+    if(!message.guild.me.permissions.has(['SEND_MESSAGES'])) return;
     if (message.author.id !== client.config.ownerID) return;
     if (!args || args.length < 1) return message.reply("Must provide a command name to reload.");
     const commandName = args[0];

@@ -2,7 +2,9 @@ module.exports = {
   name: "unban",
   description: "unbans a user",
   run: (client, message, args) => {
+    if(!message.guild.me.permissions.has(['SEND_MESSAGES'])) return;
 
+    if(!message.guild.me.permissions.has(['BAN_MEMBERS0', 'MANAGE_MEMBERS'])) return message.reply('I don\'t have the `BAN_MEMBERS` permission!');
   const adminPerm = client.config.adminPerm
   if (!adminPerm){
   return}

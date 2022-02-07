@@ -1,6 +1,9 @@
 module.exports = {
     name: "purge",
     run: (client, message, args) => {
+        if(!message.guild.me.permissions.has(['SEND_MESSAGES'])) return;
+        if(!message.guild.me.permissions.has(['MANAGE_MESSAGES'])) return message.reply({ content:(`I don't have the \`MANAGE_MESSAGES\` permission...`)})
+
         const user = message.mentions.users.first();
         const adminPerm = client.config.adminPerm
         if (!adminPerm)

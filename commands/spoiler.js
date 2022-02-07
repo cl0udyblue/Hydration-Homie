@@ -3,6 +3,7 @@ module.exports = {
     name: 'spoiler',
     aliases: ['spoil', 'censor', 'cw'],
     async run(client, message, args) {
+        if(!message.guild.me.permissions.has(['SEND_MESSAGES'])) return;
         try {
             if(!message.guild.me.permissions.has(['MANAGE_MESSAGES', 'MANAGE_WEBHOOKS'])) return message.reply({ content:(`I don't have the \`MANAGE_MESSAGES\` and \`MANAGE_WEBHOOKS\` permissions!`), allowedMentions: { repliedUser: false } });
             const user = message.author
