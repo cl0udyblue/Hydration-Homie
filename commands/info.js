@@ -132,7 +132,7 @@ module.exports = {
                     ${roles.join(" ")}
     
                     **Permissions**:
-                    \`${perms.join(", ")}\`
+                    \`${perms.join("`, `")}\`
                     `)], allowedMentions: { repliedUser: false } })
         }
     }
