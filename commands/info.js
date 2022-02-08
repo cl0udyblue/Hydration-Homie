@@ -138,16 +138,17 @@ module.exports = {
     }
     
     else {
-        message.reply({ embeds:[new MessageEmbed()
-            .setColor(`RANDOM`)
-            .setTitle(`Info on ${user.tag}.`)
-            .setDescription(`Mention: <@${user.id}>`)
-            .setThumbnail(`${user.displayAvatarURL({ size: 4096, dynamic: true, format: 'png' })}`)
-            .addFields([
-                { name: 'ID', value: `${user.id}`, inline: true },
-                { name: 'Date created', value: `${stamp2}
-                ${stamp}`, inline: true }
-              ])], allowedMentions: { repliedUser: false } })
+        message.reply({
+            embeds:[new MessageEmbed()
+                //.setColor(`RANDOM`)
+                .setTitle(`Info on ${user.tag}.`)
+                .setThumbnail(`${user.displayAvatarURL({ size: 4096, dynamic: true, format: 'png' })}`)
+                .setDescription(`**Mention**: <@${user.id}>
+                **User ID**: \`${user.id}\`
+                **Pronouns**: ${pronounMap[pronouns.pronouns]}
+                **Date created**: ${stamp2}
+
+                `)], allowedMentions: { repliedUser: false } })
     }
 }
 }
