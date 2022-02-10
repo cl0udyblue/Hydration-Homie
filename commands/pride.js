@@ -1,4 +1,4 @@
-const phin = require('phin')
+const { request } = require('undici')
 const { MessageEmbed, MessageAttachment } = require('discord.js')
 module.exports = {
 name: "pride",
@@ -9,7 +9,7 @@ async run(client, message, args) {
 
     let av = `https://some-random-api.ml/canvas/lgbt?avatar=${member.avatarURL({ size: 4096, dynamic: true,format: 'png' })}`    
 
-    const res = await phin(av) //basically the image url
+    const res = await request(av) //basically the image url
 
 if (res.statusCode !== 200) { //check if it isnt 200 OK
         console.log(JSON.parse(res.body)) //console.log the error
