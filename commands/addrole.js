@@ -6,9 +6,8 @@ module.exports = {
 
     if(!message.guild.me.permissions.has(['MANAGE_MEMBERS', 'MANAGE_ROLES'])) return message.reply({ content:(`I don't have the \`MANAGE_MEMBERS\` and \`MANAGE_ROLES\` permissions!`), allowedMentions: { repliedUser: false } });
 
-    const adminPerm = client.config.adminPerm
-    if (!adminPerm)
-      return message.reply({content:"You can't use this command.",  allowedMentions: { repliedUser: false }})
+    if (!message.member.permissions.has('MANAGE_ROLES', 'MANAGE_MEMBERS')) return message.reply({content:"You can't use this command.",  allowedMentions: { repliedUser: false }})
+
   
       if (message.mentions.members.size === 0)
       return message.reply({content:"Please mention a user to add the role to",  allowedMentions: { repliedUser: false }});

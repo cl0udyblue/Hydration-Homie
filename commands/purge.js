@@ -5,9 +5,8 @@ module.exports = {
         if(!message.guild.me.permissions.has(['MANAGE_MESSAGES'])) return message.reply({ content:(`I don't have the \`MANAGE_MESSAGES\` permission...`)})
 
         const user = message.mentions.users.first();
-        const adminPerm = client.config.adminPerm
-        if (!adminPerm)
-        return message.reply({ content:"You can't use this command.",  allowedMentions: { repliedUser: false } })
+        if (!message.member.permissions.has('MANAGE_MESSAGES')) return message.reply({content:"You can't use this command.",  allowedMentions: { repliedUser: false }})
+
 if (!/^\d+$/.test(message.content.split(" ")[1])) return message.reply('Please provide a valid number');
 
 const amount = !!parseInt(message.content.split(" ")[1]) ? parseInt(message.content.split(" ")[1]) : parseInt(message.content.split(" ")[2])
