@@ -1,7 +1,7 @@
 const { MessageEmbed } = require('discord.js')
 module.exports = {
     name: "addemoji",
-    aliases: ['addemote', 'ae', 'steal', 'add'],
+    aliases: ['addemote', 'ae', 'steal'],
     async run(client, message, args){
         if(!args[0]) return message.reply({content: 'Please specify what the emoji should be called!', allowedMentions: { repliedUser: false }})
         if (!message.attachments.size)
