@@ -11,7 +11,7 @@ module.exports = {
                 })
         let name = args.join('_')
         message.guild.emojis.create(message.attachments.first().url, name)
-         .then(emoji => message.reply({ content:`Created new emoji with name ${emoji.name}!`, allowedMentions: { repliedUser: false } }))
+         .then(emoji => message.reply({ content:`Created new emoji <:${emoji.name}:${emoji.id}>!`, allowedMentions: { repliedUser: false } }))
          .catch(console.error);
     }
 }
