@@ -5,7 +5,7 @@ name: "bi",
 aliases: ["bipfp", "bisexual"],
 async run(client, message, args) {
 
-    let member = message.author
+    let member = message.mentions.users.first() || await client.users.fetch(args[0]).catch(() => null) || message.author 
 
     let av = `https://some-random-api.ml/canvas/bisexual?avatar=${member.avatarURL({ size: 4096, dynamic: true,format: 'png' })}`    
 
