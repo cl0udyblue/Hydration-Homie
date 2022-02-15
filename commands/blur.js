@@ -1,12 +1,12 @@
 const { request } = require('undici')
 const { MessageEmbed, MessageAttachment } = require('discord.js')
 module.exports = {
-name: "pride",
+name: "blur",
 async run(client, message, args) {
 
     let user = message.mentions.users.first() || await client.users.fetch(args[0]).catch(() => null) || message.author 
 
-    let av = `https://some-random-api.ml/canvas/lgbt?avatar=${user.avatarURL({ size: 4096, dynamic: true,format: 'png' })}`    
+    let av = `https://some-random-api.ml/canvas/blur?avatar=${user.avatarURL({ size: 4096, dynamic: true,format: 'png' })}`    
 
     const res = await request(av) //basically the image url
 
