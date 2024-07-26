@@ -15,6 +15,7 @@
     "anime-images-api": "^2.0.0",
     "covid19-api": "^1.2.1",
     "discord.js": "^13.3.1",
+    "dotenv": "^16.4.5",
     "got": "^11.8.3",
     "gyp": "^0.3.0",
     "install": "^0.13.0",

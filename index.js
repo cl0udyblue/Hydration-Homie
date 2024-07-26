@@ -4,11 +4,17 @@ const Discord = require("discord.js");
 const client = new Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]
 });
-const config = require("./config.json");
-client.config = config;
+
+require(configDotenv)
+
+const token = process.env.token
+const prefix = process.env.prefix
+const ownerId = process.env.ownerId
+
 client.commands = new Discord.Collection();
 //const generate = require("random-words");
 const rword = require("rword");
+const { configDotenv } = require("dotenv");
 const events = fs.readdirSync("./events").filter(file => file.endsWith(".js"));
 for (const file of events) {
   const eventName = file.split(".")[0];
@@ -25,4 +31,4 @@ for (const file of commands) {
   client.commands.set(command.name, command);
 }
 
-client.login(config.token);
+client.login(token);
