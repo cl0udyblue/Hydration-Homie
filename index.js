@@ -6,9 +6,9 @@ const client = new Client({
 });
 
 
-const token = process.env.token
-const prefix = process.env.prefix
-const ownerId = process.env.ownerId
+process.env.token = token
+process.env.prefix = prefix
+process.env.ownerId = ownerId
 
 client.commands = new Discord.Collection();
 //const generate = require("random-words");
