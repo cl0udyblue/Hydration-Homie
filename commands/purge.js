@@ -1,5 +1,6 @@
 module.exports = {
     name: "purge",
+    aliases: "clear",
     run: (client, message, args) => {
         if(!message.guild.me.permissions.has(['SEND_MESSAGES'])) return;
         if(!message.guild.me.permissions.has(['MANAGE_MESSAGES'])) return message.reply({ content:(`I don't have the \`MANAGE_MESSAGES\` permission...`)})

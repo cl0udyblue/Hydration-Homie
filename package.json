@@ -25,6 +25,8 @@
     "node-gyp": "^8.4.1",
     "npm": "^8.3.0",
     "phin": "^3.6.1",
+    "random-words": "^2.0.1",
+    "rword": "^3.2.1",
     "some-random-api": "^2.0.0",
     "undici": "^4.12.1"
   },

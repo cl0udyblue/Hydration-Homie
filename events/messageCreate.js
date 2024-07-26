@@ -1,9 +1,10 @@
     module.exports = async (client, message) => {
-        if(message.channel.id === "941184367315812372" && message.content.toLowerCase() !== "boop") {
+        if(message.channel.id === "1266484679167705099" && message.content !== "joop") {
             try{
             message.delete()
         } catch(err) {
             console.log(err)
+
         }
         }
     if (message.author.bot) return;

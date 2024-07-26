@@ -7,8 +7,8 @@ const client = new Client({
 const config = require("./config.json");
 client.config = config;
 client.commands = new Discord.Collection();
-
-
+//const generate = require("random-words");
+const rword = require("rword");
 const events = fs.readdirSync("./events").filter(file => file.endsWith(".js"));
 for (const file of events) {
   const eventName = file.split(".")[0];
