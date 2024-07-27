@@ -5,10 +5,11 @@ const client = new Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]
 });
 
+const token = process.env.token
+const prefix = process.env.prefix
+const ownerId = process.env.ownerId
 
-process.env.token = token
-process.env.prefix = prefix
-process.env.ownerId = ownerId
+console.log(token)
 
 client.commands = new Discord.Collection();
 //const generate = require("random-words");
